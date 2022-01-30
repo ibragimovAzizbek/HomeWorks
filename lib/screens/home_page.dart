@@ -86,22 +86,22 @@ class _HomePageState extends State<HomePage> {
             margin: const EdgeInsets.only(top: 10.0),
             child: _topBarText(text1: 'Catigories', text2: 'Show all'),
           ),
-          _catigories(
+          _catigories2(
             url: 'assets/images/woman.png',
             catigorie: 'Woman',
             item: '(728 items)',
           ),
-           _catigories(
+          _catigories2(
             url: 'assets/images/man.png',
             catigorie: 'Man',
             item: '(536 items)',
           ),
-           _catigories(
+          _catigories2(
             url: 'assets/images/child.jpeg',
             catigorie: 'Child',
             item: '(226 items)',
           ),
-           _catigories(
+          _catigories2(
             url: 'assets/images/woman.png',
             catigorie: 'Woman ',
             item: '(728 items)',
@@ -111,50 +111,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  SizedBox _catigories(
-          {required String url,
-          required String catigorie,
-          required String item}) =>
-      SizedBox(
-        child: Card(
-          margin: const EdgeInsets.only(top: 10.0, left: 15, right: 15.0),
-          child: Row(
-            children: [
-              Container(
-                margin: const EdgeInsets.only(left: 15),
-                child: CircleAvatar(
-                  backgroundColor: Colors.white,
-                  backgroundImage: AssetImage(url),
-                  radius: 18,
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.only(left: 12.0),
-                child: Text(
-                  catigorie,
-                  style: TextStyle(color: _colors[1], fontSize: 17),
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.only(left: 5.0),
-                child: Text(
-                  item,
-                  style: const TextStyle(color: Colors.black45, fontSize: 12),
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.only(left: 150.0),
-                child: const Icon(
-                  Icons.chevron_right_sharp,
-                  color: Colors.black,
-                  size: 28,
-                ),
-              ),
-            ],
-          ),
-        ),
-      );
-
+ 
   Container _horizantalContainer(
           {required String clothingName,
           String url = 'assets/images/picture2.jpg',
@@ -344,11 +301,25 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-
-   
-
-
-
-
-
+  SizedBox _catigories2(
+          {required String url,
+          required String catigorie,
+          required String item}) =>
+       SizedBox(
+        child: Card(
+          margin: const EdgeInsets.only(top: 10.0, left: 15, right: 15.0),
+          child: ListTile(
+            leading: CircleAvatar(
+              backgroundColor: Colors.white,
+              backgroundImage: AssetImage(url),
+            ),
+            title: Text(
+              catigorie,
+              style: const TextStyle(color: Colors.black),
+            ),
+            subtitle: Text(item),
+            trailing: const Icon(Icons.chevron_right_sharp),
+          ),
+        ),
+      );
 }
