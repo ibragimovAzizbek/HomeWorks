@@ -111,7 +111,6 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
- 
   Container _horizantalContainer(
           {required String clothingName,
           String url = 'assets/images/picture2.jpg',
@@ -305,7 +304,7 @@ class _HomePageState extends State<HomePage> {
           {required String url,
           required String catigorie,
           required String item}) =>
-       SizedBox(
+      SizedBox(
         child: Card(
           margin: const EdgeInsets.only(top: 10.0, left: 15, right: 15.0),
           child: ListTile(
@@ -319,6 +318,7 @@ class _HomePageState extends State<HomePage> {
             ),
             subtitle: Text(item),
             trailing: const Icon(Icons.chevron_right_sharp),
+            onTap: () {},
           ),
         ),
       );
