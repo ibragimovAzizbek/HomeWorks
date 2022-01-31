@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shopping/screens/home_page.dart';
+// import 'package:shopping/screens/home_page.dart';
 // import 'package:shopping/screens/home_page2.dart';
-// import 'package:shopping/screens/home_page3.dart';
+import 'package:shopping/screens/home_page3.dart';
 
 
 class MyApp extends StatelessWidget {

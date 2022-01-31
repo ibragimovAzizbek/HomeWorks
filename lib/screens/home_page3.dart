@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -6,6 +5,8 @@ class HomePage extends StatefulWidget {
   int count = 0;
   int count2 = 0;
   int count3 = 0;
+  double total = 0;
+  double price = 20.90, price2 = 32.90, price3 = 22.90;
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -54,9 +55,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Container(
                       margin: const EdgeInsets.only(right: 70, top: 30),
-                      child: const Text(
-                        '\$20.90',
-                        style: TextStyle(
+                      child: Text(
+                        '\$${widget.price}',
+                        style: const TextStyle(
                             color: Colors.black,
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
@@ -75,6 +76,7 @@ class _HomePageState extends State<HomePage> {
                         onPressed: () {
                           setState(() {
                             widget.count--;
+                            widget.total += widget.count * widget.price;
                           });
                         },
                         icon: const Icon(Icons.minimize),
@@ -95,6 +97,7 @@ class _HomePageState extends State<HomePage> {
                       onPressed: () {
                         setState(() {
                           widget.count++;
+                          widget.total += widget.count * widget.price;
                         });
                       },
                       icon: const Icon(
@@ -143,9 +146,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Container(
                       margin: const EdgeInsets.only(right: 70, top: 30),
-                      child: const Text(
-                        '\$32.90',
-                        style: TextStyle(
+                      child: Text(
+                        '\$${widget.price2}',
+                        style: const TextStyle(
                             color: Colors.black,
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
@@ -164,6 +167,7 @@ class _HomePageState extends State<HomePage> {
                         onPressed: () {
                           setState(() {
                             widget.count2--;
+                            widget.total += widget.count2 * widget.price2;
                           });
                         },
                         icon: const Icon(Icons.minimize),
@@ -184,6 +188,7 @@ class _HomePageState extends State<HomePage> {
                       onPressed: () {
                         setState(() {
                           widget.count2++;
+                          widget.total += widget.count2 * widget.price2;
                         });
                       },
                       icon: const Icon(
@@ -232,9 +237,9 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Container(
                       margin: const EdgeInsets.only(right: 70, top: 30),
-                      child: const Text(
-                        '\$22.90',
-                        style: TextStyle(
+                      child: Text(
+                        '\$${widget.price3}',
+                        style: const TextStyle(
                             color: Colors.black,
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
@@ -253,6 +258,7 @@ class _HomePageState extends State<HomePage> {
                         onPressed: () {
                           setState(() {
                             widget.count3--;
+                            widget.total += widget.count3 * widget.price3;
                           });
                         },
                         icon: const Icon(Icons.minimize),
@@ -273,6 +279,7 @@ class _HomePageState extends State<HomePage> {
                       onPressed: () {
                         setState(() {
                           widget.count3++;
+                          widget.total += widget.count3 * widget.price3;
                         });
                       },
                       icon: const Icon(
@@ -286,20 +293,22 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
           Container(
-            margin: const EdgeInsets.only(top: 35,),
+            margin: const EdgeInsets.only(
+              top: 35,
+            ),
             child: Card(
               child: Column(
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      Text(
+                    children: [
+                      const Text(
                         "Total",
                         style: TextStyle(color: Colors.black45, fontSize: 20),
                       ),
                       Text(
-                        "\$127.60",
-                        style: TextStyle(
+                        "\$${widget.total}",
+                        style: const TextStyle(
                             color: Colors.black,
                             fontSize: 25,
                             fontWeight: FontWeight.bold),
@@ -315,7 +324,6 @@ class _HomePageState extends State<HomePage> {
                         "Check out",
                         style: TextStyle(fontSize: 25),
                       ),
-                      
                     ),
                   ),
                 ],

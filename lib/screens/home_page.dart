@@ -169,20 +169,26 @@ class _HomePageState extends State<HomePage> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            text1,
-            style: const TextStyle(
-              color: Colors.black87,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+          TextButton(
+            onPressed: () {},
+            child: Text(
+              text1,
+              style: const TextStyle(
+                color: Colors.black87,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
-          Text(
-            text2,
-            style: const TextStyle(
-              color: Colors.blue,
-              fontSize: 17,
-              fontWeight: FontWeight.bold,
+          TextButton(
+            onPressed: () {},
+            child: Text(
+              text2,
+              style: const TextStyle(
+                color: Colors.blue,
+                fontSize: 17,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ],
